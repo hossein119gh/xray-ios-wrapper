@@ -1,0 +1,11 @@
+# Standard build (recommended)
+make
+
+# Clean and rebuild
+make clean all
+
+# Build for Apple Silicon only
+make build_m1
+
+# Verify dependencies
+make test_deps
