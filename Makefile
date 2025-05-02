@@ -1,6 +1,6 @@
 # Project Configuration
 BUILD_DIR=build
-IOS_ARTIFACT=$(BUILD_DIR)/Xray.xcframework
+IOS_ARTIFACT=$(BUILD_DIR)/Xraywrapper.xcframework
 PACKAGE_PATH=xray-ios/xraywrapper
 LDFLAGS="-s -w"
 GO_MODULE=xray-ios
@@ -25,7 +25,7 @@ go_deps:
 build_apple:
 	@echo "Building Xray framework..."
 	@mkdir -p $(BUILD_DIR)
-	gomobile bind -v \
+	gomobile bind -a -v \
 		-ldflags $(LDFLAGS) \
 		-target=ios,iossimulator,macos \
 		-o $(IOS_ARTIFACT) \
